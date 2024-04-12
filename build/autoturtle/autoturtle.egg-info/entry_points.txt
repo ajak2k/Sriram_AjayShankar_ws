@@ -1,0 +1,3 @@
+[console_scripts]
+my_teletop_node = autoturtle.my_teleop_node:main
+
