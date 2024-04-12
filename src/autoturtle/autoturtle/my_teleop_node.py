@@ -5,7 +5,7 @@ import sys
 import termios
 import tty
 
-class TurtleTeleop(Node):
+class my_teleop(Node):
     def __init__(self):
         super().__init__('my_teleop_node')
         self.publisher_ = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
@@ -65,7 +65,7 @@ def main():
     rclpy.init()
     
     # Create the teleop node
-    teleop_node = TurtleTeleop()
+    teleop_node = my_teleop()
 
     # Keep the node running
     rclpy.spin(teleop_node)
