@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     maintainer='ajak2k',
     maintainer_email='assrira1@uci.edu',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='A simple package written for the EECS221 class at UCI in Spring 2024',
+    license='MIT',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
