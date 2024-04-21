@@ -5,7 +5,7 @@
   <version>0.0.1</version>
   <description>TODO: Package description</description>
   <maintainer email="assrira1@uci.edu">ajak2k</maintainer>
-  <license>TODO: License declaration</license>
+  <license>MIT</license>
   
   <exec_depend>rclpy</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
