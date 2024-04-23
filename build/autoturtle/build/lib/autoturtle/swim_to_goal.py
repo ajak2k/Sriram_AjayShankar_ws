@@ -46,11 +46,13 @@ class swim_to_goal(Node):
         try:
             #expect an input of two numbers seperated by space
             input_str = input('Please enter q to quit or the destination(x y): ')
+            #if q then quit/ close the programme
             if input_str == 'q':
                 sys.exit() 
-            input_str = input_str.split()
-            self.goal.x = float(input_str[0])
-            self.goal.y = float(input_str[1])
+            else:
+                input_str = input_str.split()
+                self.goal.x = float(input_str[0])
+                self.goal.y = float(input_str[1])
         #No input or wrong input given
         except ValueError:
             print("Please enter the input in the X Y format only")

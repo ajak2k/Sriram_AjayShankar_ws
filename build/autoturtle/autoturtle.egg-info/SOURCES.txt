@@ -10,6 +10,7 @@ setup.py
 ../../build/autoturtle/autoturtle.egg-info/zip-safe
 autoturtle/__init__.py
 autoturtle/my_teleop_node.py
+autoturtle/swim_node.py
 autoturtle/swim_to_goal.py
 resource/autoturtle
 test/test_copyright.py

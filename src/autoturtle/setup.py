@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
             'my_teleop_node = autoturtle.my_teleop_node:main',
             'swim_to_goal = autoturtle.swim_to_goal:main',
+            'swim_node = autoturtle.swim_node:main'
         ],
     },
 )
