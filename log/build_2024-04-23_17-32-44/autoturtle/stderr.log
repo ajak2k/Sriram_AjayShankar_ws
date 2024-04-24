@@ -1,0 +1,5 @@
+  File "/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages/autoturtle/swim_node.py", line 43
+    def main()
+              ^
+SyntaxError: expected ':'
+
