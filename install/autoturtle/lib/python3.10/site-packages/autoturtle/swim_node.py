@@ -7,10 +7,12 @@ import math
 class swim_node(Node):
         def __init__(self):
             super().__init__("swim_to_node")
+            #create a publisher to talk to the turtlesim
             self.cmd_vel_pub = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
             self.cmd_vel = Twist()
-
+            
             self.pose = None
+            #create a subscriber to get the pose of the turtle
             self.pose_sub = self.create_subscription(Pose, '/turtle1/pose', self.pose_callback, 10)
             self.timer = self.create_timer(0.1, self.figure_eight)
             self.count = 0
@@ -18,25 +20,27 @@ class swim_node(Node):
 
         #update the current pose from the topic    
         def pose_callback(self, data):
+            #if it is running for the first time, set the obtained data as the starting point
             if self.pose is None:
                 self.starting_x = data.x
                 self.starting_y = data.y
             self.pose = data
 
         def figure_eight(self):
+            #flag to determine when the turtle comes within the given tolerance of the starting point and reverse the anuglar velocity accordingly
             flag = 1
             turn_speed = 1.0
             linear_speed = 2*turn_speed
 
+            #ensuring we do not call math functions on a 'None' variable
             if self.pose is not None:
                 pose_x_err = abs(self.pose.x-self.starting_x)
                 pose_y_err = abs(self.pose.y-self.starting_y)
 
-            if (self.pose is None):
-                turn_speed = turn_speed
-            else:    
-                if (pose_x_err < 0.1)&(pose_y_err < 0.1):#taking only the first two decimal points on the pose
+            if (self.pose is not None):    
+                if (pose_x_err < 0.095)&(pose_y_err < 0.1):#taking only the first two decimal points on the pose
                     self.count += 1
+                
                 if self.count%2 == 0:
                     flag = -1*flag
             
