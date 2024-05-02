@@ -4,7 +4,7 @@ package_name = 'autoturtle'
 
 setup(
     name=package_name,
-    version='0.0.0',
+    version='0.3.0',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -16,7 +16,7 @@ setup(
     maintainer='ajak2k',
     maintainer_email='assrira1@uci.edu',
     description='A simple package written for the EECS221 class at UCI in Spring 2024',
-    license='MIT',
+    license='MIT-0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

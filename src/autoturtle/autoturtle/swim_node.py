@@ -4,7 +4,7 @@ from geometry_msgs.msg import Twist
 from turtlesim.msg import Pose
 
 class swim_node(Node):
-        def __init__(self):
+        def __init__(self): #class constructor
             super().__init__("swim_to_node")
             #create a publisher to talk to the turtlesim
             self.cmd_vel_pub = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
@@ -15,17 +15,15 @@ class swim_node(Node):
             self.pose_sub = self.create_subscription(Pose, '/turtle1/pose', self.pose_callback, 10)
             self.timer = self.create_timer(0.1, self.figure_eight)
             self.count = 0
-        
-
-        #update the current pose from the topic    
-        def pose_callback(self, data):
+            
+        def pose_callback(self, data): #update the current pose from the topic
             #if it is running for the first time, set the obtained data as the starting point
             if self.pose is None:
                 self.starting_x = data.x
                 self.starting_y = data.y
             self.pose = data
 
-        def figure_eight(self):
+        def figure_eight(self): #function to calculate command velocities and publish them
             #flag to determine when the turtle comes within the given tolerance of the starting point and reverse the anuglar velocity accordingly
             flag = 1
             turn_speed = 1.0
@@ -43,7 +41,7 @@ class swim_node(Node):
                 #if the threshold is too large, the count can increase multiple times and make the 8 not possible
                 #if it is too small, it will not detect that it is back in the center of the eight and keep doing just a circle, hence the tuning need
                 #the presision of the bot also seems to be different  in the different axis, need to investigat the sim to understand why
-                if (pose_x_err < 0.095)&(pose_y_err < 0.1):#taking only the first two decimal points on the pose
+                if (pose_x_err < 0.095)&(pose_y_err < 0.1)&(abs(self.pose.theta) < 0.1):#taking only the first two decimal points on the pose
                     self.count += 1
                 #even number will make the turtle go with -1.0 velocity and odd numbers will make it do +1.0 velocity, this helps us to
                 #switch directions and make the figure 8
@@ -54,10 +52,6 @@ class swim_node(Node):
             self.cmd_vel.angular.z = flag*turn_speed
             self.cmd_vel_pub.publish(self.cmd_vel)
             print("Keep Looking! The Turtle is turtling!")
-            if self.pose is not None:
-                print(self.starting_x, self.pose.x, pose_x_err)
-                print(self.starting_y, self.pose.y, pose_y_err)
-            print(self.count)
             
 def main():
     rclpy.init()
