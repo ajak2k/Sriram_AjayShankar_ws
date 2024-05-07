@@ -1,0 +1,43 @@
+[0.052s] Invoking command in '/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle:/home/ajak2k/turtlebot3_ws/install/turtlebot3_teleop:/home/ajak2k/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/ajak2k/Sriram_AjayShankar_ws/src/TurtleBot -DCMAKE_INSTALL_PREFIX=/home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot
+[0.545s] -- The C compiler identification is GNU 11.4.0
+[1.666s] -- The CXX compiler identification is GNU 11.4.0
+[2.392s] -- Detecting C compiler ABI info
+[2.717s] -- Detecting C compiler ABI info - done
+[2.728s] -- Check for working C compiler: /usr/bin/cc - skipped
+[2.736s] -- Detecting C compile features
+[2.737s] -- Detecting C compile features - done
+[2.744s] -- Detecting CXX compiler ABI info
+[3.067s] -- Detecting CXX compiler ABI info - done
+[3.078s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[3.079s] -- Detecting CXX compile features
+[3.080s] -- Detecting CXX compile features - done
+[3.114s] -- Found ament_cmake: 1.3.8 (/home/ajak2k/ros2_humble/ros2/share/ament_cmake/cmake)
+[3.364s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[3.577s] -- Found ament_lint_auto: 0.12.10 (/home/ajak2k/ros2_humble/ros2/share/ament_lint_auto/cmake)
+[3.659s] WARNING: Package name "TurtleBot" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[3.728s] -- Added test 'lint_cmake' to check CMake code style
+[3.732s] -- Added test 'xmllint' to check XML markup files
+[3.736s] -- Configuring done
+[3.742s] -- Generating done
+[3.744s] -- Build files have been written to: /home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot
+[3.750s] Invoked command in '/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle:/home/ajak2k/turtlebot3_ws/install/turtlebot3_teleop:/home/ajak2k/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/ajak2k/Sriram_AjayShankar_ws/src/TurtleBot -DCMAKE_INSTALL_PREFIX=/home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot
+[3.753s] Invoking command in '/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle:/home/ajak2k/turtlebot3_ws/install/turtlebot3_teleop:/home/ajak2k/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot -- -j8 -l8
+[3.807s] Invoked command in '/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle:/home/ajak2k/turtlebot3_ws/install/turtlebot3_teleop:/home/ajak2k/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot -- -j8 -l8
+[3.856s] Invoking command in '/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle:/home/ajak2k/turtlebot3_ws/install/turtlebot3_teleop:/home/ajak2k/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot
+[3.867s] -- Install configuration: ""
+[3.868s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/ament_index/resource_index/package_run_dependencies/TurtleBot
+[3.868s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/ament_index/resource_index/parent_prefix_path/TurtleBot
+[3.869s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/TurtleBot/environment/ament_prefix_path.sh
+[3.869s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/TurtleBot/environment/ament_prefix_path.dsv
+[3.869s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/TurtleBot/environment/path.sh
+[3.870s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/TurtleBot/environment/path.dsv
+[3.870s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/TurtleBot/local_setup.bash
+[3.870s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/TurtleBot/local_setup.sh
+[3.871s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/TurtleBot/local_setup.zsh
+[3.871s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/TurtleBot/local_setup.dsv
+[3.871s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/TurtleBot/package.dsv
+[3.871s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/ament_index/resource_index/packages/TurtleBot
+[3.872s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/TurtleBot/cmake/TurtleBotConfig.cmake
+[3.872s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/TurtleBot/cmake/TurtleBotConfig-version.cmake
+[3.872s] -- Installing: /home/ajak2k/Sriram_AjayShankar_ws/install/TurtleBot/share/TurtleBot/package.xml
+[3.876s] Invoked command in '/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle:/home/ajak2k/turtlebot3_ws/install/turtlebot3_teleop:/home/ajak2k/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot
