@@ -1,7 +1,7 @@
-import rclpy
-from rclpy.node import Node
-from geometry_msgs.msg import Twist
-from turtlesim.msg import Pose
+import rclpy# type: ignore
+from rclpy.node import Node# type: ignore
+from geometry_msgs.msg import Twist# type: ignore
+from turtlesim.msg import Pose# type: ignore
 
 class swim_node(Node):
         def __init__(self): #class constructor

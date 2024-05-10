@@ -1,8 +1,8 @@
-import rclpy
-from rclpy.node import Node
-from geometry_msgs.msg import Twist
-from turtlesim.msg import Pose
-from rcl_interfaces.msg import Log
+import rclpy # type: ignore
+from rclpy.node import Node # type: ignore
+from geometry_msgs.msg import Twist# type: ignore
+from turtlesim.msg import Pose# type: ignore
+from rcl_interfaces.msg import Log# type: ignore
 import math
 import sys
 

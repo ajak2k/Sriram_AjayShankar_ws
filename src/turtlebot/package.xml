@@ -7,6 +7,13 @@
   <maintainer email="sajaax2000@gmail.com">ajak2k</maintainer>
   <license>MIT-0</license>
 
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>geometry_msgs.msg</exec_depend>
+  <exec_depend>nav_msgs.msg </exec_depend>
+  <exec_depend>std_msgs.msg</exec_depend>
+  <exec_depend>tf.transformations</exec_depend>
+  <exec_depend>sys</exec_depend>
+
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
