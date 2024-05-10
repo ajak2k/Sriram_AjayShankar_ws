@@ -1,0 +1,23 @@
+[2.394s] Invoking command in '/home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle': PYTHONPATH=/home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/build --no-deps symlink_data --force
+[3.151s] running develop
+[3.153s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[3.154s]   warnings.warn(
+[3.787s] running egg_info
+[3.788s] writing autoturtle.egg-info/PKG-INFO
+[3.788s] writing dependency_links to autoturtle.egg-info/dependency_links.txt
+[3.789s] writing entry points to autoturtle.egg-info/entry_points.txt
+[3.790s] writing requirements to autoturtle.egg-info/requires.txt
+[3.790s] writing top-level names to autoturtle.egg-info/top_level.txt
+[3.792s] reading manifest file 'autoturtle.egg-info/SOURCES.txt'
+[3.794s] writing manifest file 'autoturtle.egg-info/SOURCES.txt'
+[3.796s] running build_ext
+[3.797s] Creating /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages/autoturtle.egg-link (link to .)
+[3.800s] Installing my_teleop_node script to /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/autoturtle
+[3.802s] Installing swim_node script to /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/autoturtle
+[3.803s] Installing swim_to_goal script to /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/autoturtle
+[3.803s] 
+[3.804s] Installed /home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle
+[3.804s] running symlink_data
+[3.805s] symbolically linking /home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/resource/autoturtle -> /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/share/ament_index/resource_index/packages
+[3.806s] symbolically linking /home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/package.xml -> /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/share/autoturtle
+[3.856s] Invoked command in '/home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle' returned '0': PYTHONPATH=/home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/build --no-deps symlink_data --force

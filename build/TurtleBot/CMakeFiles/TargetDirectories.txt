@@ -1,9 +1,0 @@
-/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot/CMakeFiles/uninstall.dir
-/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot/CMakeFiles/TurtleBot_uninstall.dir
-/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot/CMakeFiles/test.dir
-/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot/CMakeFiles/edit_cache.dir
-/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot/CMakeFiles/rebuild_cache.dir
-/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot/CMakeFiles/list_install_components.dir
-/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot/CMakeFiles/install.dir
-/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot/CMakeFiles/install/local.dir
-/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot/CMakeFiles/install/strip.dir
