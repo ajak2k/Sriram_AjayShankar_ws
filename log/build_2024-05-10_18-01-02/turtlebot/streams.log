@@ -1,0 +1,10 @@
+[1.081s] Invoking command in '/home/ajak2k/Sriram_AjayShankar_ws/src/turtlebot': PYTHONPATH=/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/turtlebot build --build-base /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build install --record /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/install.log --single-version-externally-managed install_data
+[1.359s] Traceback (most recent call last):
+[1.359s]   File "/home/ajak2k/Sriram_AjayShankar_ws/src/turtlebot/setup.py", line 1, in <module>
+[1.360s]     from setuptools import find_packages, setup
+[1.360s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 19, in <module>
+[1.367s]     from setuptools.depends import Require
+[1.367s]   File "/usr/lib/python3/dist-packages/setuptools/depends.py", line 17, in <module>
+[1.367s]     class Require:
+[1.368s] KeyboardInterrupt
+[1.386s] Invoked command in '/home/ajak2k/Sriram_AjayShankar_ws/src/turtlebot' returned '-2': PYTHONPATH=/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/turtlebot build --build-base /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build install --record /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/install.log --single-version-externally-managed install_data
