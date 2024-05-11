@@ -9,11 +9,12 @@ from turtlebot.pid_controller import pid_controller
 class motion_planner(Node):
     #init for the class
     def __init__(self):
+        #print('############################## __init__ Motion Planner ##################################')
         super().__init__('motion_planner')
         #create pub to publish the input obtained from the user
         self.reference_pose_publisher = self.create_publisher(Float64MultiArray, 'reference_pose', 10)
         #create sub to get the current pose from odom
-        self.odom_subscriber = self.create_subscriber(Odometry, 'odom', self.pose_update, 10)
+        self.odom_subscriber = self.create_subscription(Odometry, 'odom', self.pose_update, 10)
 
         #Class variables
         self.current_pose = Pose_simple()
@@ -35,6 +36,7 @@ class motion_planner(Node):
         #if yes, then call the user prompt
         #if no, print 'waiting for bot to reach the goal' and continue
     def pose_update(self, odom):
+        #print('############################## Pose Update ##################################')
         "' Here we downsample the current locations to just the first 3 decimal points '"
         self.current_pose.x = float(int(odom.pose.pose.position.x*1000)/1000)
         self.current_pose.y = float(int(odom.pose.pose.position.y*1000)/1000)
@@ -42,6 +44,7 @@ class motion_planner(Node):
 
 #create a function to read the input, parse it into the float array and publish it
     def get_input(self):
+        #print('############################## Get Input ##################################')
         msg = Float64MultiArray()
 
         try:
@@ -70,18 +73,20 @@ class motion_planner(Node):
             print("Please enter all the parameters [x y angle pid_mode] ")
             self.get_input()
         
-        msg = [self.goal.x, self.goal.y, self.goal.theta, self.pid_mode]
+        msg.data = [self.goal.x, self.goal.y, self.goal.theta, self.pid_mode]
         self.reference_pose_publisher.publish(msg)
 
 #a funciton to check if the bot has reached it's destination, if yes it will get new input
     def timer_callback(self):
-        if self.status_check:
+        #print('############################## Timer Callback ##################################')
+        if self.status_check():
             self.get_input()
         else:
             print('The Turtle is turtling, kindly be patient they are a bit old :)')
 
 #now we need a function that checks if it is okay to get the next set of inputs from the user based on the bot status
     def status_check(self):
+        #print('############################## Status Check ##################################')
         distance_error = pid_controller.euclidean_distance_error(self.current_pose, self.goal)
         angle_error = pid_controller.angle_error(self.current_pose, self.goal)
 
@@ -94,14 +99,15 @@ class motion_planner(Node):
 #main
 #create the object, initialize it, spin it destroy it
 def main(args=None):
+    print('############################## Motion Planner 0.3.0 ##################################')
     rclpy.init(args=args)
-    motion_planner = motion_planner()
+    motion_planner_object = motion_planner()
     try:
-        rclpy.spin(motion_planner)
+        rclpy.spin(motion_planner_object)
     except Exception as e:
-        motion_planner.get_logger().error('Error in Motion Planner: %s' % str(e))
+        motion_planner_object.get_logger().error('Error in Motion Planner: %s' % str(e))
     finally:
-        motion_planner.destroy_node()
+        motion_planner_object.destroy_node()
         rclpy.shutdown()
 
 if __name__ == '__main__':

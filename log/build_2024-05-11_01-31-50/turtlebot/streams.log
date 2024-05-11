@@ -1,0 +1,22 @@
+[1.060s] Invoking command in '/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot': PYTHONPATH=/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build --no-deps symlink_data --force
+[1.402s] running develop
+[1.403s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[1.403s]   warnings.warn(
+[1.678s] running egg_info
+[1.679s] writing turtlebot.egg-info/PKG-INFO
+[1.679s] writing dependency_links to turtlebot.egg-info/dependency_links.txt
+[1.680s] writing entry points to turtlebot.egg-info/entry_points.txt
+[1.680s] writing requirements to turtlebot.egg-info/requires.txt
+[1.680s] writing top-level names to turtlebot.egg-info/top_level.txt
+[1.681s] reading manifest file 'turtlebot.egg-info/SOURCES.txt'
+[1.682s] writing manifest file 'turtlebot.egg-info/SOURCES.txt'
+[1.684s] running build_ext
+[1.684s] Creating /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot.egg-link (link to .)
+[1.685s] Installing motion_planner script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+[1.686s] Installing pid_controller script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+[1.686s] 
+[1.686s] Installed /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot
+[1.686s] running symlink_data
+[1.687s] symbolically linking /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/resource/turtlebot -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/share/ament_index/resource_index/packages
+[1.687s] symbolically linking /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/package.xml -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/share/turtlebot
+[1.718s] Invoked command in '/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot' returned '0': PYTHONPATH=/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build --no-deps symlink_data --force

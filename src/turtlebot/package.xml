@@ -9,13 +9,11 @@
 
   <exec_depend>rclpy</exec_depend>
   <exec_depend>sys</exec_depend>
-  <exec_depend>geometry_msgs</exec_depend>
-  <exec_depend>nav_msgs</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>geometry_msgs.msg</exec_depend>
+  <exec_depend>nav_msgs.msg</exec_depend>
+  <exec_depend>std_msgs.msg</exec_depend>
   <exec_depend>math</exec_depend>
-  <exec_depend></exec_depend>
-  <exec_depend></exec_depend>
-  <exec_depend></exec_depend>
+  <exec_depend>turtlesim.msg</exec_depend>
 
   
 
