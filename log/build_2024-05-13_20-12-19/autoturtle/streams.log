@@ -1,0 +1,23 @@
+[4.983s] Invoking command in '/home/ajak2k/Sriram_AjayShankar_ws/src/autoturtle': PYTHONPATH=/home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/autoturtle build --build-base /home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/build install --record /home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/install.log --single-version-externally-managed install_data
+[6.463s] running egg_info
+[6.472s] writing ../../build/autoturtle/autoturtle.egg-info/PKG-INFO
+[6.473s] writing dependency_links to ../../build/autoturtle/autoturtle.egg-info/dependency_links.txt
+[6.474s] writing entry points to ../../build/autoturtle/autoturtle.egg-info/entry_points.txt
+[6.475s] writing requirements to ../../build/autoturtle/autoturtle.egg-info/requires.txt
+[6.475s] writing top-level names to ../../build/autoturtle/autoturtle.egg-info/top_level.txt
+[6.489s] reading manifest file '../../build/autoturtle/autoturtle.egg-info/SOURCES.txt'
+[6.489s] writing manifest file '../../build/autoturtle/autoturtle.egg-info/SOURCES.txt'
+[6.490s] running build
+[6.490s] running build_py
+[6.497s] running install
+[6.498s] running install_lib
+[6.512s] running install_data
+[6.513s] running install_egg_info
+[6.515s] removing '/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages/autoturtle-0.3.0-py3.10.egg-info' (and everything under it)
+[6.516s] Copying ../../build/autoturtle/autoturtle.egg-info to /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages/autoturtle-0.3.0-py3.10.egg-info
+[6.517s] running install_scripts
+[6.620s] Installing my_teleop_node script to /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/autoturtle
+[6.620s] Installing swim_node script to /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/autoturtle
+[6.621s] Installing swim_to_goal script to /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/autoturtle
+[6.622s] writing list of installed files to '/home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/install.log'
+[6.783s] Invoked command in '/home/ajak2k/Sriram_AjayShankar_ws/src/autoturtle' returned '0': PYTHONPATH=/home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/autoturtle build --build-base /home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/build install --record /home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/install.log --single-version-externally-managed install_data

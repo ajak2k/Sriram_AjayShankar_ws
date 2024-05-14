@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     maintainer='ajak2k',
     maintainer_email='sajaax2000@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='A package that impliments PID control for the turtlebot3 in gazebo. The controller gets inputs from the motion_planner',
+    license='MIT-0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

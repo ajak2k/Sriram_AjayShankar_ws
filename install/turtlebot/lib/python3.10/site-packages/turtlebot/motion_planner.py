@@ -9,7 +9,7 @@ from turtlebot.pid_controller import pid_controller
 class motion_planner(Node):
     #init for the class
     def __init__(self):
-        #print('############################## __init__ Motion Planner ##################################')
+        print('############################## Initializing Motion Planner ##################################')
         super().__init__('motion_planner')
         #create pub to publish the input obtained from the user
         self.reference_pose_publisher = self.create_publisher(Float64MultiArray, 'reference_pose', 10)
@@ -21,14 +21,14 @@ class motion_planner(Node):
         self.goal = Pose_simple()
         self.pid_mode = -1
 
-        self.distance_threshold = 0.01
+        self.distance_threshold = 0.1
         self.angle_threshold = 0.1
 
         #get the first set of inputs from the user
         self.get_input()
 
         #from now, check if the goal is reached and only then get inputs
-        self.timer = self.create_timer(1.0, self.timer_callback)
+        self.timer = self.create_timer(0.5, self.timer_callback)
 
        
 #create a callback function for odom subscriber
@@ -37,14 +37,14 @@ class motion_planner(Node):
         #if no, print 'waiting for bot to reach the goal' and continue
     def pose_update(self, odom):
         #print('############################## Pose Update ##################################')
-        "' Here we downsample the current locations to just the first 3 decimal points '"
-        self.current_pose.x = float(int(odom.pose.pose.position.x*1000)/1000)
-        self.current_pose.y = float(int(odom.pose.pose.position.y*1000)/1000)
-        self.current_pose.theta = float(int(pid_controller.quaternion_to_euler(odom.pose.pose.orientation)*1000)/1000)
+        "' Here we downsample the current locations to just the first n decimal points '"
+        self.current_pose.x = float(int(odom.pose.pose.position.x*100000)/100000)
+        self.current_pose.y = float(int(odom.pose.pose.position.y*100000)/100000)
+        self.current_pose.theta = float(int(pid_controller.quaternion_to_euler(odom.pose.pose.orientation)*100000)/100000)
 
 #create a function to read the input, parse it into the float array and publish it
     def get_input(self):
-        #print('############################## Get Input ##################################')
+        print('############################## User Input ##################################')
         msg = Float64MultiArray()
 
         try:
@@ -89,8 +89,9 @@ class motion_planner(Node):
         #print('############################## Status Check ##################################')
         distance_error = pid_controller.euclidean_distance_error(self.current_pose, self.goal)
         angle_error = pid_controller.angle_error(self.current_pose, self.goal)
+        orientation_error = pid_controller.orientation_error(self.current_pose, self.goal)
 
-        if abs(angle_error) < self.angle_threshold and abs(distance_error)< self.distance_threshold:
+        if abs(angle_error) <= self.angle_threshold and abs(distance_error)<= self.distance_threshold and abs(orientation_error)<= self.angle_threshold:
             print('Goal reached!')
             return True
         else:
@@ -99,7 +100,7 @@ class motion_planner(Node):
 #main
 #create the object, initialize it, spin it destroy it
 def main(args=None):
-    print('############################## Motion Planner 0.3.0 ##################################')
+    print('############################## Turtlebot/Motion Planner 0.3.0 ##################################')
     rclpy.init(args=args)
     motion_planner_object = motion_planner()
     try:

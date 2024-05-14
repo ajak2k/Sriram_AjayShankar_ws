@@ -1,0 +1,114 @@
+[0.000000] (-) TimerEvent: {}
+[0.000982] (autoturtle) JobQueued: {'identifier': 'autoturtle', 'dependencies': OrderedDict()}
+[0.001297] (turtlebot) JobQueued: {'identifier': 'turtlebot', 'dependencies': OrderedDict()}
+[0.001387] (autoturtle) JobStarted: {'identifier': 'autoturtle'}
+[0.044264] (turtlebot) JobStarted: {'identifier': 'turtlebot'}
+[0.096812] (-) TimerEvent: {}
+[0.197351] (-) TimerEvent: {}
+[0.297934] (-) TimerEvent: {}
+[0.398958] (-) TimerEvent: {}
+[0.499544] (-) TimerEvent: {}
+[0.600329] (-) TimerEvent: {}
+[0.701260] (-) TimerEvent: {}
+[0.801975] (-) TimerEvent: {}
+[0.904666] (-) TimerEvent: {}
+[1.005481] (-) TimerEvent: {}
+[1.106028] (-) TimerEvent: {}
+[1.206548] (-) TimerEvent: {}
+[1.307138] (-) TimerEvent: {}
+[1.407926] (-) TimerEvent: {}
+[1.508515] (-) TimerEvent: {}
+[1.609697] (-) TimerEvent: {}
+[1.711308] (-) TimerEvent: {}
+[1.811974] (-) TimerEvent: {}
+[1.912445] (-) TimerEvent: {}
+[2.013201] (-) TimerEvent: {}
+[2.113828] (-) TimerEvent: {}
+[2.215123] (-) TimerEvent: {}
+[2.317647] (-) TimerEvent: {}
+[2.419017] (-) TimerEvent: {}
+[2.519522] (-) TimerEvent: {}
+[2.620105] (-) TimerEvent: {}
+[2.720733] (-) TimerEvent: {}
+[2.822473] (-) TimerEvent: {}
+[2.923419] (-) TimerEvent: {}
+[3.024585] (-) TimerEvent: {}
+[3.125164] (-) TimerEvent: {}
+[3.227327] (-) TimerEvent: {}
+[3.328230] (-) TimerEvent: {}
+[3.429110] (-) TimerEvent: {}
+[3.529920] (-) TimerEvent: {}
+[3.630442] (-) TimerEvent: {}
+[3.731212] (-) TimerEvent: {}
+[3.832116] (-) TimerEvent: {}
+[3.932733] (-) TimerEvent: {}
+[4.033536] (-) TimerEvent: {}
+[4.134533] (-) TimerEvent: {}
+[4.235300] (-) TimerEvent: {}
+[4.336098] (-) TimerEvent: {}
+[4.436713] (-) TimerEvent: {}
+[4.537379] (-) TimerEvent: {}
+[4.637900] (-) TimerEvent: {}
+[4.693928] (autoturtle) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/autoturtle', 'build', '--build-base', '/home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/build', 'install', '--record', '/home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/ajak2k/Sriram_AjayShankar_ws/src/autoturtle', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'ajak2k', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/ajak2k/ros2_humble/ros2/opt/rviz_ogre_vendor/lib:/opt/rti.com/rti_connext_dds-6.0.1/lib/x64Linux4gcc7.3.0:/opt/rti.com/rti_connext_dds-6.0.1/bin:/home/ajak2k/ros2_humble/ros2/lib', 'HOME': '/home/ajak2k', 'CONNEXTDDS_DIR': '/opt/rti.com/rti_connext_dds-6.0.1', 'ROS_PYTHON_VERSION': '3', 'NDDSHOME': '/opt/rti.com/rti_connext_dds-6.0.1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/ajak2k/Sriram_AjayShankar_ws/install:/home/ajak2k/turtlebot3_ws/install:/home/ajak2k/ros2_humble/ros2', 'ROS_DISTRO': 'humble', 'LOGNAME': 'ajak2k', 'NAME': 'Ajay', 'WSL_INTEROP': '/run/WSL/36951_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/home/ajak2k/.local/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/ajak2k/ros2_humble/ros2/lib/x86_64-linux-gnu/pkgconfig:/home/ajak2k/ros2_humble/ros2/lib/pkgconfig', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': ':/home/ajak2k/turtlebot3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models:/home/ajak2k/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/turtlebot3_common:/home/ajak2k/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/turtlebot3_common/meshes', 'LIBGL_ALWAYS_INDIRECT': '0', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/ajak2k/.local/bin:/opt/ros/humble/bin:/opt/rti.com/rti_connext_dds-6.0.1/lib/x64Linux4gcc7.3.0:/opt/rti.com/rti_connext_dds-6.0.1/bin:/home/ajak2k/ros2_humble/ros2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/VMware/VMware Player/bin/:/mnt/c/Python38/Scripts/:/mnt/c/Python38/:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/mpirt:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/MATLAB/R2023b/bin:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/ProgramData/chocolatey/lib/cunit/lib:/mnt/c/ProgramData/chocolatey/lib/tinyxml2/lib:/mnt/c/ProgramData/chocolatey/lib/bullet/lib:/mnt/c/Program Files/Cppcheck:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/PuTTY/:/mnt/c/Users/sajaa/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/sajaa/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/sajaa/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/OpenSSL-Win64/bin:/mnt/c/opencv/x64/vc16/bin:/mnt/c/Users/sajaa/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/d/UC Irvine/01 - Academics/3_Spring 24/EECS232 Data Privacy/Project/data_privacy_readability_ws:/mnt/c/Python38/Scripts:/opt/ros/humble:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_DOMAIN_ID': '30', 'AMENT_PREFIX_PATH': '/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle:/home/ajak2k/turtlebot3_ws/install/turtlebot3_simulations:/home/ajak2k/turtlebot3_ws/install/turtlebot3_gazebo:/home/ajak2k/turtlebot3_ws/install/turtlebot3_fake_node:/opt/ros/humble:/home/ajak2k/ros2_humble/ros2', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CONNEXTDDS_ARCH': 'x64Linux4gcc7.3.0', 'PWD': '/home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle', 'TURTLEBOT3_MODEL': 'burger', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages:/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/ajak2k/ros2_humble/ros2/lib/python3.10/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/ajak2k/turtlebot3_ws/install/turtlebot3_simulations:/home/ajak2k/turtlebot3_ws/install/turtlebot3_gazebo:/home/ajak2k/turtlebot3_ws/install/turtlebot3_fake_node:/home/ajak2k/ros2_humble/ros2', 'WSLENV': ''}, 'shell': False}
+[4.709115] (turtlebot) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/turtlebot', 'build', '--build-base', '/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build', 'install', '--record', '/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/ajak2k/Sriram_AjayShankar_ws/src/turtlebot', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'ajak2k', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/ajak2k/ros2_humble/ros2/opt/rviz_ogre_vendor/lib:/opt/rti.com/rti_connext_dds-6.0.1/lib/x64Linux4gcc7.3.0:/opt/rti.com/rti_connext_dds-6.0.1/bin:/home/ajak2k/ros2_humble/ros2/lib', 'HOME': '/home/ajak2k', 'CONNEXTDDS_DIR': '/opt/rti.com/rti_connext_dds-6.0.1', 'ROS_PYTHON_VERSION': '3', 'NDDSHOME': '/opt/rti.com/rti_connext_dds-6.0.1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/ajak2k/Sriram_AjayShankar_ws/install:/home/ajak2k/turtlebot3_ws/install:/home/ajak2k/ros2_humble/ros2', 'ROS_DISTRO': 'humble', 'LOGNAME': 'ajak2k', 'NAME': 'Ajay', 'WSL_INTEROP': '/run/WSL/36951_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/home/ajak2k/.local/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/ajak2k/ros2_humble/ros2/lib/x86_64-linux-gnu/pkgconfig:/home/ajak2k/ros2_humble/ros2/lib/pkgconfig', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': ':/home/ajak2k/turtlebot3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models:/home/ajak2k/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/turtlebot3_common:/home/ajak2k/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/turtlebot3_common/meshes', 'LIBGL_ALWAYS_INDIRECT': '0', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/ajak2k/.local/bin:/opt/ros/humble/bin:/opt/rti.com/rti_connext_dds-6.0.1/lib/x64Linux4gcc7.3.0:/opt/rti.com/rti_connext_dds-6.0.1/bin:/home/ajak2k/ros2_humble/ros2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/VMware/VMware Player/bin/:/mnt/c/Python38/Scripts/:/mnt/c/Python38/:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/mpirt:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/MATLAB/R2023b/bin:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/ProgramData/chocolatey/lib/cunit/lib:/mnt/c/ProgramData/chocolatey/lib/tinyxml2/lib:/mnt/c/ProgramData/chocolatey/lib/bullet/lib:/mnt/c/Program Files/Cppcheck:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/PuTTY/:/mnt/c/Users/sajaa/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/sajaa/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/sajaa/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/OpenSSL-Win64/bin:/mnt/c/opencv/x64/vc16/bin:/mnt/c/Users/sajaa/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/d/UC Irvine/01 - Academics/3_Spring 24/EECS232 Data Privacy/Project/data_privacy_readability_ws:/mnt/c/Python38/Scripts:/opt/ros/humble:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_DOMAIN_ID': '30', 'AMENT_PREFIX_PATH': '/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle:/home/ajak2k/turtlebot3_ws/install/turtlebot3_simulations:/home/ajak2k/turtlebot3_ws/install/turtlebot3_gazebo:/home/ajak2k/turtlebot3_ws/install/turtlebot3_fake_node:/opt/ros/humble:/home/ajak2k/ros2_humble/ros2', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CONNEXTDDS_ARCH': 'x64Linux4gcc7.3.0', 'PWD': '/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot', 'TURTLEBOT3_MODEL': 'burger', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages:/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/home/ajak2k/ros2_humble/ros2/lib/python3.10/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/ajak2k/turtlebot3_ws/install/turtlebot3_simulations:/home/ajak2k/turtlebot3_ws/install/turtlebot3_gazebo:/home/ajak2k/turtlebot3_ws/install/turtlebot3_fake_node:/home/ajak2k/ros2_humble/ros2', 'WSLENV': ''}, 'shell': False}
+[4.738137] (-) TimerEvent: {}
+[4.838714] (-) TimerEvent: {}
+[4.940517] (-) TimerEvent: {}
+[5.041243] (-) TimerEvent: {}
+[5.141869] (-) TimerEvent: {}
+[5.242541] (-) TimerEvent: {}
+[5.343334] (-) TimerEvent: {}
+[5.444181] (-) TimerEvent: {}
+[5.544709] (-) TimerEvent: {}
+[5.645227] (-) TimerEvent: {}
+[5.745754] (-) TimerEvent: {}
+[5.846832] (-) TimerEvent: {}
+[5.906082] (turtlebot) StdoutLine: {'line': b'running egg_info\n'}
+[5.908397] (turtlebot) StdoutLine: {'line': b'writing ../../build/turtlebot/turtlebot.egg-info/PKG-INFO\n'}
+[5.909110] (turtlebot) StdoutLine: {'line': b'writing dependency_links to ../../build/turtlebot/turtlebot.egg-info/dependency_links.txt\n'}
+[5.909595] (turtlebot) StdoutLine: {'line': b'writing entry points to ../../build/turtlebot/turtlebot.egg-info/entry_points.txt\n'}
+[5.910223] (turtlebot) StdoutLine: {'line': b'writing requirements to ../../build/turtlebot/turtlebot.egg-info/requires.txt\n'}
+[5.910565] (turtlebot) StdoutLine: {'line': b'writing top-level names to ../../build/turtlebot/turtlebot.egg-info/top_level.txt\n'}
+[5.913245] (autoturtle) StdoutLine: {'line': b'running egg_info\n'}
+[5.917634] (autoturtle) StdoutLine: {'line': b'writing ../../build/autoturtle/autoturtle.egg-info/PKG-INFO\n'}
+[5.918222] (turtlebot) StdoutLine: {'line': b"reading manifest file '../../build/turtlebot/turtlebot.egg-info/SOURCES.txt'\n"}
+[5.920572] (autoturtle) StdoutLine: {'line': b'writing dependency_links to ../../build/autoturtle/autoturtle.egg-info/dependency_links.txt\n'}
+[5.920892] (autoturtle) StdoutLine: {'line': b'writing entry points to ../../build/autoturtle/autoturtle.egg-info/entry_points.txt\n'}
+[5.921850] (autoturtle) StdoutLine: {'line': b'writing requirements to ../../build/autoturtle/autoturtle.egg-info/requires.txt\n'}
+[5.922156] (autoturtle) StdoutLine: {'line': b'writing top-level names to ../../build/autoturtle/autoturtle.egg-info/top_level.txt\n'}
+[5.922375] (turtlebot) StdoutLine: {'line': b"writing manifest file '../../build/turtlebot/turtlebot.egg-info/SOURCES.txt'\n"}
+[5.922600] (turtlebot) StdoutLine: {'line': b'running build\n'}
+[5.922827] (turtlebot) StdoutLine: {'line': b'running build_py\n'}
+[5.923186] (turtlebot) StdoutLine: {'line': b'running install\n'}
+[5.923487] (turtlebot) StdoutLine: {'line': b'running install_lib\n'}
+[5.928009] (turtlebot) StdoutLine: {'line': b'running install_data\n'}
+[5.928710] (turtlebot) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.929412] (autoturtle) StdoutLine: {'line': b"reading manifest file '../../build/autoturtle/autoturtle.egg-info/SOURCES.txt'\n"}
+[5.932338] (autoturtle) StdoutLine: {'line': b"writing manifest file '../../build/autoturtle/autoturtle.egg-info/SOURCES.txt'\n"}
+[5.933637] (autoturtle) StdoutLine: {'line': b'running build\n'}
+[5.934067] (autoturtle) StdoutLine: {'line': b'running build_py\n'}
+[5.934615] (autoturtle) StdoutLine: {'line': b'running install\n'}
+[5.934934] (turtlebot) StdoutLine: {'line': b"removing '/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot-0.2.0-py3.10.egg-info' (and everything under it)\n"}
+[5.935473] (turtlebot) StdoutLine: {'line': b'Copying ../../build/turtlebot/turtlebot.egg-info to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot-0.2.0-py3.10.egg-info\n'}
+[5.935864] (autoturtle) StdoutLine: {'line': b'running install_lib\n'}
+[5.939078] (turtlebot) StdoutLine: {'line': b'running install_scripts\n'}
+[5.945262] (autoturtle) StdoutLine: {'line': b'running install_data\n'}
+[5.945714] (autoturtle) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.946996] (-) TimerEvent: {}
+[5.949080] (autoturtle) StdoutLine: {'line': b"removing '/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages/autoturtle-0.3.0-py3.10.egg-info' (and everything under it)\n"}
+[5.949765] (autoturtle) StdoutLine: {'line': b'Copying ../../build/autoturtle/autoturtle.egg-info to /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/python3.10/site-packages/autoturtle-0.3.0-py3.10.egg-info\n'}
+[5.952894] (autoturtle) StdoutLine: {'line': b'running install_scripts\n'}
+[6.009710] (turtlebot) StdoutLine: {'line': b'Installing motion_planner script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot\n'}
+[6.010430] (turtlebot) StdoutLine: {'line': b'Installing pid_controller script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot\n'}
+[6.012123] (turtlebot) StdoutLine: {'line': b"writing list of installed files to '/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/install.log'\n"}
+[6.034671] (autoturtle) StdoutLine: {'line': b'Installing my_teleop_node script to /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/autoturtle\n'}
+[6.035592] (autoturtle) StdoutLine: {'line': b'Installing swim_node script to /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/autoturtle\n'}
+[6.036091] (autoturtle) StdoutLine: {'line': b'Installing swim_to_goal script to /home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle/lib/autoturtle\n'}
+[6.036458] (autoturtle) StdoutLine: {'line': b"writing list of installed files to '/home/ajak2k/Sriram_AjayShankar_ws/build/autoturtle/install.log'\n"}
+[6.047183] (-) TimerEvent: {}
+[6.115838] (turtlebot) CommandEnded: {'returncode': 0}
+[6.130078] (turtlebot) JobEnded: {'identifier': 'turtlebot', 'rc': 0}
+[6.134199] (autoturtle) CommandEnded: {'returncode': 0}
+[6.147417] (-) TimerEvent: {}
+[6.150128] (autoturtle) JobEnded: {'identifier': 'autoturtle', 'rc': 0}
+[6.152841] (-) EventReactorShutdown: {}

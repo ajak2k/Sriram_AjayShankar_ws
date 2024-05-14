@@ -1,0 +1,27 @@
+running egg_info
+writing ../../build/turtlebot/turtlebot.egg-info/PKG-INFO
+writing dependency_links to ../../build/turtlebot/turtlebot.egg-info/dependency_links.txt
+writing entry points to ../../build/turtlebot/turtlebot.egg-info/entry_points.txt
+writing requirements to ../../build/turtlebot/turtlebot.egg-info/requires.txt
+writing top-level names to ../../build/turtlebot/turtlebot.egg-info/top_level.txt
+reading manifest file '../../build/turtlebot/turtlebot.egg-info/SOURCES.txt'
+writing manifest file '../../build/turtlebot/turtlebot.egg-info/SOURCES.txt'
+running build
+running build_py
+copying turtlebot/motion_planner.py -> /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot
+copying turtlebot/pid_controller.py -> /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot
+running install
+running install_lib
+copying /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot/motion_planner.py -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot
+copying /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot/pid_controller.py -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot
+byte-compiling /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot/motion_planner.py to motion_planner.cpython-310.pyc
+byte-compiling /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot/pid_controller.py to pid_controller.cpython-310.pyc
+running install_data
+copying package.xml -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/share/turtlebot
+running install_egg_info
+removing '/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot-0.2.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/turtlebot/turtlebot.egg-info to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot-0.2.0-py3.10.egg-info
+running install_scripts
+Installing motion_planner script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+Installing pid_controller script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+writing list of installed files to '/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/install.log'

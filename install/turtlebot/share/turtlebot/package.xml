@@ -2,10 +2,10 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>turtlebot</name>
-  <version>0.2.0</version>
-  <description>TODO: Package description</description>
+  <version>0.3.0</version>
+  <description>A package that impliments PID control for the turtlebot3 in gazebo. The controller gets inputs from the motion_planner</description>
   <maintainer email="sajaax2000@gmail.com">ajak2k</maintainer>
-  <license>TODO: License declaration</license>
+  <license>MIT-0</license>
 
   <exec_depend>rclpy</exec_depend>
   <exec_depend>sys</exec_depend>
