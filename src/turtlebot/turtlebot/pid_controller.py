@@ -39,6 +39,7 @@ class pid_controller(Node):
         #if the flag is set, the x,y is reched and the orientation controller will be triggered
         #flag is reset once orientation goal is also reched and the pid mode is reset to indicate end
         self.flag = 0
+        #added line for git examples
 
         #error memory
         #linear
@@ -60,8 +61,7 @@ class pid_controller(Node):
         # PID gains for angular velocity
         self.Kp_gain_angular = 0.5
         self.Ki_gain_angular = 0.1 
-        self.Kd_gain_angular = 0.1
-        
+        self.Kd_gain_angular = 0.1        
         #PID mode 1 gains
         # PID gains for linear velocity
         self.Kp_gain_linear_1 = 1.8
