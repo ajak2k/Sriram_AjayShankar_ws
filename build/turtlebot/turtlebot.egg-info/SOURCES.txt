@@ -13,5 +13,7 @@ test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
 turtlebot/__init__.py
+turtlebot/map_reader_template.py
 turtlebot/motion_planner.py
 turtlebot/pid_controller.py
+turtlebot/rrt.py

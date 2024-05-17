@@ -1,4 +1,6 @@
 [console_scripts]
+map_reader_template = turtlebot.map_reader_template:main
 motion_planner = turtlebot.motion_planner:main
 pid_controller = turtlebot.pid_controller:main
+rrt = turtlebot.rrt:main
 

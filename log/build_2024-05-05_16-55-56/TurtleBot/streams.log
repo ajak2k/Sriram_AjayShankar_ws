@@ -1,5 +1,0 @@
-[0.051s] Invoking command in '/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle:/home/ajak2k/turtlebot3_ws/install/turtlebot3_teleop:/home/ajak2k/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot -- -j8 -l8
-[0.133s] [0mCMake Error: The source directory "/home/ajak2k/Sriram_AjayShankar_ws/src/TurtleBot" does not exist.
-[0.133s] Specify --help for usage, or press the help button on the CMake GUI.[0m
-[0.140s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
-[0.515s] Invoked command in '/home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ajak2k/Sriram_AjayShankar_ws/install/autoturtle:/home/ajak2k/turtlebot3_ws/install/turtlebot3_teleop:/home/ajak2k/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/ajak2k/Sriram_AjayShankar_ws/build/TurtleBot -- -j8 -l8
