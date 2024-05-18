@@ -5,6 +5,7 @@ from rclpy.qos import QoSProfile, QoSDurabilityPolicy #type:ignore
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 class MapSubscriber(Node):
     def __init__(self):
         super().__init__('map_subscriber')

@@ -1,0 +1,5 @@
+  File "/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot/motion_planner.py", line 61
+    ros2 run turtlebot map_reader_template
+         ^^^
+SyntaxError: invalid syntax
+

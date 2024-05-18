@@ -2,7 +2,7 @@
 
 import numpy as np
 from matplotlib import cm
-from scipy.misc import imread
+#from scipy.misc import imread
 import random, sys, math, os.path
 import cv2
 
@@ -18,7 +18,7 @@ def rapidlyExploringRandomTree(img, start, goal, seed=None):
   graph = []
   points.append(start)
   graph.append((start, []))
-  # print 'Generating and conecting random points'
+  print ('Generating and conecting random points')
   occupied = True
   phaseTwo = False
 
@@ -30,8 +30,8 @@ def rapidlyExploringRandomTree(img, start, goal, seed=None):
 
   i = 0
   while (goal not in points) and (len(points) < MAX_NUM_VERT):
-    # if (i % 100) == 0:
-    #   print i, 'points randomly generated'
+    if (i % 100) == 0:
+      print (i, 'points randomly generated')
 
     if (len(points) % hundreds) == 0:
       # print len(points), 'vertex generated'
@@ -70,7 +70,7 @@ def rapidlyExploringRandomTree(img, start, goal, seed=None):
 
 
   if goal in points:
-    # print 'Goal found, total vertex in graph:', len(points), 'total random points generated:', i
+    print ('Goal found, total vertex in graph:', len(points), 'total random points generated:', i)
     path = searchPath(graph, start, [start])
     # print 'Showing resulting map'
     # print 'Final path:', path
@@ -166,7 +166,6 @@ def find_path_RRT(start,goal,my_map):
   my_map = cv2.cvtColor(map_img(my_map), cv2.COLOR_GRAY2BGR)[::-1]
   path = rapidlyExploringRandomTree(my_map, start, goal, seed=None)
   return path
-
 
 
 

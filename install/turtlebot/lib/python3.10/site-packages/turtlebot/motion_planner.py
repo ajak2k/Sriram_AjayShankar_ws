@@ -2,9 +2,8 @@ import sys
 import rclpy #type: ignore
 from rclpy.node import Node #type:ignore
 from std_msgs.msg import Float64MultiArray #type: ignore
-from nav_msgs.msg import Odometry # type: ignore
-from turtlesim.msg import Pose as Pose_simple# type: ignore
-from turtlebot.pid_controller import pid_controller
+import matplotlib as plt
+import numpy as np
 
 class motion_planner(Node):
     #init for the class
@@ -12,35 +11,21 @@ class motion_planner(Node):
         print('############################## Initializing Motion Planner ##################################')
         super().__init__('motion_planner')
         #create pub to publish the input obtained from the user
-        self.reference_pose_publisher = self.create_publisher(Float64MultiArray, 'reference_pose', 10)
+        self.start_goal_publisher = self.create_publisher(Float64MultiArray, 'start_goal', 10)
         #create sub to get the current pose from odom
-        self.odom_subscriber = self.create_subscription(Odometry, 'odom', self.pose_update, 10)
-
-        #Class variables
-        self.current_pose = Pose_simple()
-        self.goal = Pose_simple()
-        self.pid_mode = -1
-
-        self.distance_threshold = 0.1
-        self.angle_threshold = 0.1
-
-        #get the first set of inputs from the user
+        self.trajectory_subscriber = self.create_subscription(Float64MultiArray, 'trajectory', self.update_trajectory, 10)
+        #get the input for the first time, the next times will be done when the trajectory is received
         self.get_input()
 
-        #from now, check if the goal is reached and only then get inputs
-        self.timer = self.create_timer(0.5, self.timer_callback)
-
-       
-#create a callback function for odom subscriber
-    #this should check if the goal is reached
-        #if yes, then call the user prompt
-        #if no, print 'waiting for bot to reach the goal' and continue
-    def pose_update(self, odom):
-        #print('############################## Pose Update ##################################')
-        "' Here we downsample the current locations to just the first n decimal points '"
-        self.current_pose.x = float(int(odom.pose.pose.position.x*100000)/100000)
-        self.current_pose.y = float(int(odom.pose.pose.position.y*100000)/100000)
-        self.current_pose.theta = float(int(pid_controller.quaternion_to_euler(odom.pose.pose.orientation)*100000)/100000)
+    #the callback function to parse the received trajectory, print it and call the next set of inputs
+    def update_trajectory(self, msg):
+        self.plot_trajectory(msg.info)
+    
+    def plot_trajectory(self, path):
+        plt.imshow(self.current_map, cmap='gray')
+        path = np.array(path)
+        plt.plot(path[:, 1], path[:, 0], 'r')
+        plt.show()
 
 #create a function to read the input, parse it into the float array and publish it
     def get_input(self):
@@ -49,58 +34,31 @@ class motion_planner(Node):
 
         try:
             #expect an input of two numbers seperated by space
-            input_str = input('Please enter q to quit or the destination [x y angle pid_mode]: ')
+            input_str = input('Please enter q to quit  or the start point and the goal point [x y x y]: ')
             #if q then quit/ close the programme
             if input_str == 'q':
                 sys.exit() 
             else:
                 input_str = input_str.split()
-                self.goal.x = float(input_str[0])
-                self.goal.y = float(input_str[1])
-                self.goal.theta = float(input_str[2])
-                self.pid_mode = float(input_str[3])
-                #ensuring we have the right inputs
-                if self.pid_mode not in [0.0,1.0]:
-                    print('Please enter a valid pid_mode value of 0 or 1')
-                    self.get_input()
-
+                self.start = [float(input_str[0]), float(input_str[1])] 
+                self.goal = [float(input_str[2]), float(input_str[3])]
         #No input or wrong input given
         except ValueError:
-            print("Please enter the input in the [x y angle pid_mode] format only")
+            print("Please enter the input in the [x y x y] format only")
             self.get_input()
         #Only one input given
         except IndexError:
-            print("Please enter all the parameters [x y angle pid_mode] ")
+            print("Please enter all the parameters [x y x y] ")
             self.get_input()
         
-        msg.data = [self.goal.x, self.goal.y, self.goal.theta, self.pid_mode]
-        self.reference_pose_publisher.publish(msg)
+        msg.data = [self.start[0], self.start[1], self.goal[0], self.goal[1]]
+        self.start_goal_publisher.publish(msg)
 
-#a funciton to check if the bot has reached it's destination, if yes it will get new input
-    def timer_callback(self):
-        #print('############################## Timer Callback ##################################')
-        if self.status_check():
-            self.get_input()
-        else:
-            print('The Turtle is turtling, kindly be patient they are a bit old :)')
-
-#now we need a function that checks if it is okay to get the next set of inputs from the user based on the bot status
-    def status_check(self):
-        #print('############################## Status Check ##################################')
-        distance_error = pid_controller.euclidean_distance_error(self.current_pose, self.goal)
-        angle_error = pid_controller.angle_error(self.current_pose, self.goal)
-        orientation_error = pid_controller.orientation_error(self.current_pose, self.goal)
-
-        if abs(angle_error) <= self.angle_threshold and abs(distance_error)<= self.distance_threshold and abs(orientation_error)<= self.angle_threshold:
-            print('Goal reached!')
-            return True
-        else:
-            return False
 
 #main
 #create the object, initialize it, spin it destroy it
 def main(args=None):
-    print('############################## Turtlebot/Motion Planner 0.3.0 ##################################')
+    print('############################## Turtlebot/Motion Planner 0.4.0 ##################################')
     rclpy.init(args=args)
     motion_planner_object = motion_planner()
     try:

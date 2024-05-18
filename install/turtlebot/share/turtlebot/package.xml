@@ -2,8 +2,8 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>turtlebot</name>
-  <version>0.3.0</version>
-  <description>A package that impliments PID control for the turtlebot3 in gazebo. The controller gets inputs from the motion_planner</description>
+  <version>0.4.0</version>
+  <description>A package that impliments PID control and RRT based motion planning for the turtlebot3 in gazebo. The controller gets inputs from the motion_planner</description>
   <maintainer email="sajaax2000@gmail.com">ajak2k</maintainer>
   <license>MIT-0</license>
 
