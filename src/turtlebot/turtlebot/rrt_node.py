@@ -101,8 +101,12 @@ class rrt_node(Node):
         if not self.is_within_bounds(goal_index):
             self.get_logger().error("Goal index out of bounds.")
             return
-        #pass the index to find_path_rrt and get the list of points
-        path , graph = find_path_RRT (start_index ,goal_index , cv2.cvtColor(map_img (self.current_map), cv2.COLOR_GRAY2BGR)[:: -1])
+        try:
+            path, graph = find_path_RRT(start_index, goal_index, cv2.cvtColor(map_img(self.current_map), cv2.COLOR_GRAY2BGR)[::-1])
+        except Exception as e:
+            self.get_logger().error(f"Error in RRT computation: {e}")
+            return
+        
         #publish computed trajectory 
         print('############################## Computation Complete ##################################')
         trajectory_msg = Float64MultiArray()
@@ -111,20 +115,21 @@ class rrt_node(Node):
         
 
     def coordinates_to_index(self, coordinate):
-        print('############################## Converting Coordinates to Indices ##################################')
-        #convert the goal coordiantes in the map to the points in the grid i.e. the index of the map 2d array
+        print(f'############################## Converting Coordinates {coordinate} to Indices ##################################')
+        # Convert the goal coordinates in the map to the points in the grid i.e., the index of the map 2D array
         x_index = int((coordinate[0] - self.origin[0]) / self.resolution)
         y_index = int((coordinate[1] - self.origin[1]) / self.resolution)
         index = [x_index, y_index]
-        print('indices: ' ,index[0], index[1])
+        print(f'Converted coordinates {coordinate} to index {index}')
         return index
     
     
     def is_within_bounds(self, index):
          # Check if the given index is within the bounds of the map
-        return True
-
-
+        x, y = index
+        within_bounds = 0 <= x < self.current_map.shape[1] and 0 <= y < self.current_map.shape[0]
+        print(f'Index {index} is within bounds: {within_bounds} {self.current_map.shape[1]} {self.current_map.shape[0]}')
+        return within_bounds
 
 
 def main(args = None):
