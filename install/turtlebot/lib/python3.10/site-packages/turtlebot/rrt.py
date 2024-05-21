@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+ #!/usr/bin/env python
 
 import numpy as np
 from matplotlib import cm
@@ -7,7 +7,7 @@ import random, sys, math, os.path
 import cv2
 
 MIN_NUM_VERT = 20 # Minimum number of vertex in the graph
-MAX_NUM_VERT = 1500 # Maximum number of vertex in the graph
+MAX_NUM_VERT = 150000 # Maximum number of vertex in the graph
 STEP_DISTANCE = 20 # Maximum distance between two vertex
 SEED = None # For random numbers
 
@@ -72,9 +72,9 @@ def rapidlyExploringRandomTree(img, start, goal, seed=None):
   if goal in points:
     print ('Goal found, total vertex in graph:', len(points), 'total random points generated:', i)
     path = searchPath(graph, start, [start])
-    # print 'Showing resulting map'
-    # print 'Final path:', path
-    # print 'The final path is made from:', len(path),'connected points'
+    print ('Showing resulting map')
+    print ('Final path:', path)
+    print ('The final path is made from:', len(path),'connected points')
   else:
     path = None
     print('Reached maximum number of vertex and goal was not found')
@@ -153,7 +153,7 @@ def connectPoints(a, b, img):
   return newPoints
 
 def findNearestPoint(points, point):
-  best = (sys.maxint, sys.maxint, sys.maxint)
+  best = (sys.maxsize, sys.maxsize, sys.maxsize)
   for p in points:
     if p == point:
       continue
@@ -170,7 +170,8 @@ def find_path_RRT(start,goal,my_map):
 
 
 def map_img(arr):
-    disp_map = np.ones((384,384))*255
+    height, width = arr.shape
+    disp_map = np.ones((height,width))*255
     for i in range(arr.shape[0]):
         for j in range(arr.shape[1]):
             if arr[i][j]==-1:
