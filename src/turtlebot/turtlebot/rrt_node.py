@@ -134,7 +134,7 @@ class rrt_node(Node):
                 self.get_logger().error("No path identified, please look at the given points")
             else:
                 #print(f'Path and Graph calculated: {path}\n {graph}')
-                self.plot_path(path)
+                #self.plot_path(path)
                 #publish computed trajectory 
                 print('############################## Computation Complete ##################################')
                 trajectory_msg = Float64MultiArray()

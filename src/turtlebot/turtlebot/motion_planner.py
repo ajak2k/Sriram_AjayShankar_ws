@@ -11,7 +11,7 @@ class motion_planner(Node):
     
     def __init__(self):
         super().__init__('motion_planner')
-        self.get_logger().info('################### Initializing Motion Planner ###################')
+        self.get_logger().info('####### Initializing Motion Planner #######')
 
         #Subscribers
         #trajectory -> list of points to follow from rrt_node
@@ -41,8 +41,10 @@ class motion_planner(Node):
         self.reference_published:bool = False
 
         #PID parameters
-        self.distance_threshold = 0.2
+        self.distance_threshold = 0.5
         self.angle_threshold = 0.1
+
+        self.i:int = 2 #set i to 2 to skip the first two points in the trajectory as that is the start point
 
         print('Please publish the target_pose...')
 
@@ -58,7 +60,7 @@ class motion_planner(Node):
 
     def current_pose_update(self, msg):
         #get the current pose from gazebo and store it locally
-        #print('############################## Pose Update ##################################') '"
+        #print('####### Pose Update #######') '"
         self.current_pose.x = float(int(msg.pose.pose.position.x*100000)/100000)
         self.current_pose.y = float(int(msg.pose.pose.position.y*100000)/100000)
         self.current_pose.theta = float(int(pid_controller.quaternion_to_euler(msg.pose.pose.orientation)*100000)/100000)
@@ -67,7 +69,7 @@ class motion_planner(Node):
 
     def update_trajectory(self, msg):
         #get the trajectory from the rrt_node and store it locally
-        #print('############################## Trajectory Update ##################################')
+        #print('####### Trajectory Update #######')
         self.trajectory = msg.data
         
         if self.trajectory == []:
@@ -91,7 +93,7 @@ class motion_planner(Node):
          #once the trajectory is done, reset all points and wait for the next target_pose
         #else, wait for the target_pose and current_pose to be available 
     def control(self):
-        self.get_logger().info('############################## Control ##################################')
+        #self.get_logger().info('####### Control #######')
         start_goal_msg = Float64MultiArray()
         reference_pose_msg = Float64MultiArray()
 
@@ -110,46 +112,43 @@ class motion_planner(Node):
         if self.trajectory_received == False:
             self.get_logger().info('Waiting for the trajectory...')
             return 
-        
-        self.get_logger().info('Trajectory received...')
+        else:
+            #self.get_logger().info('Trajectory received...')
 
-        if self.PID_running == False:
-            self.PID_running = True
-            self.get_logger().info('Starting PID controller...')
+            #self.get_logger().info('Starting PID controller...')
             #keep program control here till we go through all the points in the trajectory i.e., the bot reaches the target            
-            i:int = 2 #set i to 2 to skip the first two points in the trajectory as that is the start point
-            print(len(self.trajectory))
-            print(self.trajectory)
-            while i< len(self.trajectory):
+            if self.i<= len(self.trajectory):
+                reference_pose_x = self.trajectory[self.i]
+                reference_pose_y = self.trajectory[self.i+1]
+                reference_pose_msg.data = [reference_pose_x, reference_pose_y, 0.0, 0.0] #set the theta to 0 as we are not using it and set PID mode to 0 by default
                 
                 if self.reference_published == False:
                     #publish the reference pose to the PID controller
-                    self.get_logger().info(f'Publishing reference pose {i}...')
-                    reference_pose_x = self.trajectory[i]
-                    reference_pose_y = self.trajectory[i+1]
-                    reference_pose_msg.data = [reference_pose_x, reference_pose_y, 0.0, 0.0] #set the theta to 0 as we are not using it and set PID mode to 0 by default
+                    self.get_logger().info(f'Publishing reference pose {self.i}...')
                     self.reference_pose_publisher.publish(reference_pose_msg) #send the first reference pose to the PID controller
                     self.reference_published = True
                 #wait for the bot to reach the reference point
                 if self.goal_reached_status() == True:
                     self.get_logger().info('Turtle reached the reference point...')
-                    i+=2
+                    self.i=self.i+2
                     self.reference_published = False
-                else:
-                    #self.get_logger().info('Turtle not reached the reference point...')
-                    time.sleep(0.5)
+                #print current pose and reference pose and the distance error
+                #print(f'Current Pose: {self.current_pose.x}, {self.current_pose.y}, {self.current_pose.theta}')
+                #print(f'Reference Pose: {reference_pose_x}, {reference_pose_y}')
+                #print('Waiting for the bot to reach the reference point...')
 
-            self.get_logger().info('Trajectory completed...')
-            #reset all flags to wait for the next target_pose        
-            self.PID_running = False
-            self.start_goal_published = False
-            self.target_pose_received = False
-            self.current_pose_received = False
-            self.trajectory_received = False
-            self.get_logger().info('############################## Control Complete ##################################')
-            return
-
-        self.get_logger().error('Error in control logic...')    
+            else:
+                self.get_logger().info('Trajectory completed...')
+                #reset all flags to wait for the next target_pose        
+                self.PID_running = False
+                self.start_goal_published = False
+                self.target_pose_received = False
+                self.current_pose_received = False
+                self.trajectory_received = False
+                self.reference_published = False
+                self.i = 2
+                self.get_logger().info('####### Control Complete #######')
+            
         return
                 
 
@@ -159,9 +158,12 @@ class motion_planner(Node):
 
     #identify if the pid controller is close to the target
     def goal_reached_status(self):
-        #print('############################## Status Check ##################################')
-        distance_error = pid_controller.euclidean_distance_error(self.current_pose, self.target_pose)
-        angle_error = pid_controller.angle_error(self.current_pose, self.target_pose)
+        #print('####### Status Check #######')
+        reference_pose = Pose_simple()
+        reference_pose.x = self.trajectory[self.i]
+        reference_pose.y = self.trajectory[self.i+1]
+        distance_error = pid_controller.euclidean_distance_error(self.current_pose, reference_pose)
+        angle_error = pid_controller.angle_error(self.current_pose, reference_pose)
 
         if abs(distance_error) > self.distance_threshold:
             return False
@@ -172,7 +174,7 @@ class motion_planner(Node):
         
 
 def main():
-    print('################### Turtlebot/Motion Planner 0.4.0 ###################')
+    print('####### Turtlebot/Motion Planner 0.4.0 #######')
     rclpy.init(args=None)
     motion_planner_object = motion_planner()
     try:

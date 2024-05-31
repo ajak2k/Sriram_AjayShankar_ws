@@ -31,7 +31,7 @@ class pid_controller(Node):
         self.pid_mode = 0
         
         #PID parameters
-        self.distance_threshold = 0.1
+        self.distance_threshold = 0.5
         self.angle_threshold = 0.1
         self.orientation_threshold = 0.5
 
