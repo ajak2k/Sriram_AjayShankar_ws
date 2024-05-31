@@ -1,4 +1,4 @@
-import rclpy #type:ignore
+import rclpy
 from rclpy.node import Node #type:ignore
 from nav_msgs.msg import OccupancyGrid #type:ignore
 from rclpy.qos import QoSProfile, QoSDurabilityPolicy #type:ignore
