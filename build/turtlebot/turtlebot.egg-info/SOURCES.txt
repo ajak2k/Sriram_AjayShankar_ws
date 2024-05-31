@@ -16,6 +16,7 @@ turtlebot/__init__.py
 turtlebot/map_reader_template.py
 turtlebot/motion_planner.py
 turtlebot/motion_planner_pid.py
+turtlebot/motion_planner_rrt.py
 turtlebot/pid_controller.py
 turtlebot/rrt.py
 turtlebot/rrt_node.py

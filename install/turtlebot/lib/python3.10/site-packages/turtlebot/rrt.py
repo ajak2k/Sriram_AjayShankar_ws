@@ -7,7 +7,7 @@ import random, sys, math, os.path
 import cv2
 
 MIN_NUM_VERT = 20 # Minimum number of vertex in the graph
-MAX_NUM_VERT = 150000 # Maximum number of vertex in the graph
+MAX_NUM_VERT = 1500 # Maximum number of vertex in the graph
 STEP_DISTANCE = 20 # Maximum distance between two vertex
 SEED = None # For random numbers
 

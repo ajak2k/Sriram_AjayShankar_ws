@@ -1,0 +1,28 @@
+[2.610s] Invoking command in '/home/ajak2k/Sriram_AjayShankar_ws/src/turtlebot': PYTHONPATH=/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/turtlebot build --build-base /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build install --record /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/install.log --single-version-externally-managed install_data
+[3.409s] running egg_info
+[3.414s] writing ../../build/turtlebot/turtlebot.egg-info/PKG-INFO
+[3.414s] writing dependency_links to ../../build/turtlebot/turtlebot.egg-info/dependency_links.txt
+[3.415s] writing entry points to ../../build/turtlebot/turtlebot.egg-info/entry_points.txt
+[3.415s] writing requirements to ../../build/turtlebot/turtlebot.egg-info/requires.txt
+[3.416s] writing top-level names to ../../build/turtlebot/turtlebot.egg-info/top_level.txt
+[3.420s] reading manifest file '../../build/turtlebot/turtlebot.egg-info/SOURCES.txt'
+[3.423s] writing manifest file '../../build/turtlebot/turtlebot.egg-info/SOURCES.txt'
+[3.424s] running build
+[3.424s] running build_py
+[3.425s] copying turtlebot/motion_planner.py -> /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot
+[3.426s] running install
+[3.427s] running install_lib
+[3.430s] copying /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot/motion_planner.py -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot
+[3.432s] byte-compiling /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot/motion_planner.py to motion_planner.cpython-310.pyc
+[3.435s] running install_data
+[3.436s] running install_egg_info
+[3.440s] removing '/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot-0.4.0-py3.10.egg-info' (and everything under it)
+[3.441s] Copying ../../build/turtlebot/turtlebot.egg-info to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot-0.4.0-py3.10.egg-info
+[3.444s] running install_scripts
+[3.498s] Installing map_reader_template script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+[3.499s] Installing motion_planner script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+[3.499s] Installing pid_controller script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+[3.501s] Installing rrt script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+[3.503s] Installing rrt_node script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+[3.504s] writing list of installed files to '/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/install.log'
+[3.569s] Invoked command in '/home/ajak2k/Sriram_AjayShankar_ws/src/turtlebot' returned '0': PYTHONPATH=/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/turtlebot build --build-base /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build install --record /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/install.log --single-version-externally-managed install_data

@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import sys
 import rclpy #type: ignore
 from rclpy.node import Node #type:ignore

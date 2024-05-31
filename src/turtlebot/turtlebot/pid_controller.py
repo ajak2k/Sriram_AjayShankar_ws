@@ -25,10 +25,10 @@ class pid_controller(Node):
 
         
         #test info
-        self.goal.x = 3.0
-        self.goal.y = -4.0
-        self.goal.theta = 2.0
-        self.pid_mode = 1
+        self.goal.x = 0.0
+        self.goal.y = 0.0
+        self.goal.theta = 0.0
+        self.pid_mode = 0
         
         #PID parameters
         self.distance_threshold = 0.1
@@ -77,6 +77,7 @@ class pid_controller(Node):
         self.max_linear_speed = 0.5  # m/s
         self.max_angular_speed = 1.0 # rad/s
 
+        self.reference_received = False
 
         #create timer to enact control actions
         self.timer = self.create_timer(1.0, self.timer_callback)
@@ -94,6 +95,7 @@ class pid_controller(Node):
         self.goal.y = msg.data[1]
         self.goal.theta = msg.data[2]
         self.pid_mode = msg.data[3]
+        self.reference_received = True
 
     def timer_callback(self):
         #print('############################## Timer Callback ##################################')
@@ -141,8 +143,14 @@ class pid_controller(Node):
     def controller(self, current_pose, goal_pose, mode):
         #print('############################## Controller Called ##################################')
         cmd_vel = Twist()
+        if self.reference_received == False:
+            print('No Reference Pose Received, waiting for input')
+            cmd_vel.angular.z = 0.0
+            cmd_vel.linear.x = 0.0
+            self.cmd_vel_publisher.publish(cmd_vel)
+            return
         if mode == 0:
-            print('############################## PID Mode 0 Operation ##################################')
+            #print('############################## PID Mode 0 Operation ##################################')
             if(self.flag == 0):
                 if abs(self.angle_error(current_pose, goal_pose)) > self.angle_threshold :
                     print('Solving the Angle Problem')
@@ -153,6 +161,9 @@ class pid_controller(Node):
                     #angle goal acheived, reset the error memory and check for the linear goal
                     self.angular_previous_error = 0.0
                     self.angular_error_accumulator = 0.0
+                    print("current x: ", current_pose.x , " goal x: ",goal_pose.x)
+                    print("current y: ", current_pose.y , " goal y: ",goal_pose.y)
+                    print('distance error: ', self.euclidean_distance_error(current_pose, goal_pose))
                     
                     if self.euclidean_distance_error(current_pose, goal_pose) > self.distance_threshold:
                         print('Solving the Linear Problem')
@@ -183,7 +194,7 @@ class pid_controller(Node):
                         self.pid_mode = -1   
                         self.flag = 0  
         elif mode == 1:
-            print('############################## PID Mode 1 Operation ##################################')
+            #print('############################## PID Mode 1 Operation ##################################')
             if self.flag == 0:
                 if abs(self.angle_error(current_pose, goal_pose)) > self.angle_threshold or self.euclidean_distance_error(current_pose, goal_pose) > self.distance_threshold:
                     print('solving the Angular and Linear Problems')

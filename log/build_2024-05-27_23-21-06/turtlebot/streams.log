@@ -1,0 +1,59 @@
+[1.282s] Invoking command in '/home/ajak2k/Sriram_AjayShankar_ws/src/turtlebot': PYTHONPATH=/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/turtlebot build --build-base /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build install --record /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/install.log --single-version-externally-managed install_data
+[1.581s] running egg_info
+[1.582s] creating ../../build/turtlebot/turtlebot.egg-info
+[1.582s] writing ../../build/turtlebot/turtlebot.egg-info/PKG-INFO
+[1.582s] writing dependency_links to ../../build/turtlebot/turtlebot.egg-info/dependency_links.txt
+[1.582s] writing entry points to ../../build/turtlebot/turtlebot.egg-info/entry_points.txt
+[1.583s] writing requirements to ../../build/turtlebot/turtlebot.egg-info/requires.txt
+[1.583s] writing top-level names to ../../build/turtlebot/turtlebot.egg-info/top_level.txt
+[1.583s] writing manifest file '../../build/turtlebot/turtlebot.egg-info/SOURCES.txt'
+[1.585s] reading manifest file '../../build/turtlebot/turtlebot.egg-info/SOURCES.txt'
+[1.586s] writing manifest file '../../build/turtlebot/turtlebot.egg-info/SOURCES.txt'
+[1.586s] running build
+[1.587s] running build_py
+[1.587s] creating /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build
+[1.588s] creating /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib
+[1.588s] creating /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot
+[1.588s] copying turtlebot/motion_planner.py -> /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot
+[1.589s] copying turtlebot/__init__.py -> /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot
+[1.589s] copying turtlebot/map_reader_template.py -> /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot
+[1.589s] copying turtlebot/motion_planner_rrt.py -> /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot
+[1.589s] copying turtlebot/motion_planner_pid.py -> /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot
+[1.590s] copying turtlebot/rrt_node.py -> /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot
+[1.590s] copying turtlebot/pid_controller.py -> /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot
+[1.591s] copying turtlebot/rrt.py -> /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot
+[1.591s] running install
+[1.592s] running install_lib
+[1.592s] creating /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot
+[1.592s] copying /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot/motion_planner.py -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot
+[1.594s] copying /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot/__init__.py -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot
+[1.594s] copying /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot/map_reader_template.py -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot
+[1.594s] copying /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot/motion_planner_rrt.py -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot
+[1.594s] copying /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot/motion_planner_pid.py -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot
+[1.595s] copying /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot/rrt_node.py -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot
+[1.595s] copying /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot/pid_controller.py -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot
+[1.595s] copying /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build/lib/turtlebot/rrt.py -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot
+[1.595s] byte-compiling /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot/motion_planner.py to motion_planner.cpython-310.pyc
+[1.596s] byte-compiling /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot/__init__.py to __init__.cpython-310.pyc
+[1.596s] byte-compiling /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot/map_reader_template.py to map_reader_template.cpython-310.pyc
+[1.597s] byte-compiling /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot/motion_planner_rrt.py to motion_planner_rrt.cpython-310.pyc
+[1.597s] byte-compiling /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot/motion_planner_pid.py to motion_planner_pid.cpython-310.pyc
+[1.598s] byte-compiling /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot/rrt_node.py to rrt_node.cpython-310.pyc
+[1.598s] byte-compiling /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot/pid_controller.py to pid_controller.cpython-310.pyc
+[1.599s] byte-compiling /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot/rrt.py to rrt.cpython-310.pyc
+[1.600s] running install_data
+[1.601s] creating /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/share/ament_index
+[1.601s] creating /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/share/ament_index/resource_index
+[1.601s] creating /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/share/ament_index/resource_index/packages
+[1.601s] copying resource/turtlebot -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/share/ament_index/resource_index/packages
+[1.602s] copying package.xml -> /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/share/turtlebot
+[1.602s] running install_egg_info
+[1.603s] Copying ../../build/turtlebot/turtlebot.egg-info to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages/turtlebot-0.4.0-py3.10.egg-info
+[1.604s] running install_scripts
+[1.627s] Installing map_reader_template script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+[1.628s] Installing motion_planner script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+[1.628s] Installing pid_controller script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+[1.628s] Installing rrt script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+[1.628s] Installing rrt_node script to /home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/turtlebot
+[1.629s] writing list of installed files to '/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/install.log'
+[1.681s] Invoked command in '/home/ajak2k/Sriram_AjayShankar_ws/src/turtlebot' returned '0': PYTHONPATH=/home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/prefix_override:/home/ajak2k/Sriram_AjayShankar_ws/install/turtlebot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/turtlebot build --build-base /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/build install --record /home/ajak2k/Sriram_AjayShankar_ws/build/turtlebot/install.log --single-version-externally-managed install_data

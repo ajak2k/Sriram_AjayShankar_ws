@@ -98,6 +98,15 @@ class rrt_node(Node):
             self.get_logger().error("Index out of bounds.")
             index = [-1, -1]
         return index
+    
+    def index_to_coordinates(self, index):
+        # Convert the index of the map 2D array to the coordinates in the map
+        coordinate:list = []
+        while len(index) > 0:
+            coordinate.append(index.pop(0) * self.resolution + self.origin[0])
+            coordinate.append(index.pop(0) * self.resolution + self.origin[1])
+        print(f'Converted index {index} to coordinates {coordinate}')
+        return coordinate
 
     def is_within_bounds(self, index):
          # Check if the given index is within the bounds of the map
@@ -107,7 +116,7 @@ class rrt_node(Node):
         return within_bounds
     
     def compute_trajectory(self, start, goal):
-        print('############################## Computing Trajectory, Please wait ##################################')
+        
         if self.current_map.size == 0:
             self.get_logger().error("Map data is not yet received.")
             return
@@ -117,26 +126,27 @@ class rrt_node(Node):
         
         #check if the received indices are within the bounds of the map
         if start_index[0] and start_index[1] and goal_index[0] and goal_index[1] >= 0:
-            try:
-                #run the rrt algorithm to identify the path
-                path, graph = find_path_RRT(start_index, goal_index, self.current_map)
-                #check if path is found
-                if path is None:
-                    self.get_logger().error("No path identified, please look at the given points")
-                else:
-                    #print(f'Path and Graph calculated: {path}\n {graph}')
-                    self.plot_path(path)
-                    #publish computed trajectory 
-                    print('############################## Computation Complete ##################################')
-                    trajectory_msg = Float64MultiArray()
-                    #typecast the value into float just in case
-                    trajectory_msg.data = [float(x) for x in np.array(path).flatten()]
-                    self.trajectory_publisher.publish(trajectory_msg) 
-            except Exception as e:
-                self.get_logger().error(f"Error in RRT computation: {e}")
-                return      
+            print('############################## Computing Trajectory, Please wait ##################################')
+            #run the rrt algorithm to identify the path
+            path, graph = find_path_RRT(start_index, goal_index, self.current_map)
+            #check if path is found
+            if path is None:
+                self.get_logger().error("No path identified, please look at the given points")
+            else:
+                #print(f'Path and Graph calculated: {path}\n {graph}')
+                self.plot_path(path)
+                #publish computed trajectory 
+                print('############################## Computation Complete ##################################')
+                trajectory_msg = Float64MultiArray()
+                #typecast the value into float just in case
+                trajectory_msg.data = [float(x) for x in np.array(path).flatten()]
+                trajectory_msg.data = self.index_to_coordinates(trajectory_msg.data)
+                self.trajectory_publisher.publish(trajectory_msg) 
+                print('waiting for new start and goal points...')
+            return
         else:
-            self.get_logger().error("index out of bounds")      
+            self.get_logger().error("index out of bounds")
+            return      
     
     
 
