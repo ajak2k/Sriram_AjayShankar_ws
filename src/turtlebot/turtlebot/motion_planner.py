@@ -117,14 +117,14 @@ class motion_planner(Node):
 
             #self.get_logger().info('Starting PID controller...')
             #keep program control here till we go through all the points in the trajectory i.e., the bot reaches the target            
-            if self.i<= len(self.trajectory):
+            if self.i< len(self.trajectory):
                 reference_pose_x = self.trajectory[self.i]
                 reference_pose_y = self.trajectory[self.i+1]
                 reference_pose_msg.data = [reference_pose_x, reference_pose_y, 0.0, 0.0] #set the theta to 0 as we are not using it and set PID mode to 0 by default
                 
                 if self.reference_published == False:
                     #publish the reference pose to the PID controller
-                    self.get_logger().info(f'Publishing reference pose {self.i}...')
+                    self.get_logger().info(f'Publishing reference pose {self.i/2}...')
                     self.reference_pose_publisher.publish(reference_pose_msg) #send the first reference pose to the PID controller
                     self.reference_published = True
                 #wait for the bot to reach the reference point
