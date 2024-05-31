@@ -38,9 +38,10 @@ class motion_planner(Node):
         self.trajectory_received:bool = False
         self.start_goal_published:bool = False
         self.PID_running:bool = False
+        self.reference_published:bool = False
 
         #PID parameters
-        self.distance_threshold = 0.1
+        self.distance_threshold = 0.2
         self.angle_threshold = 0.1
 
         print('Please publish the target_pose...')
@@ -120,19 +121,23 @@ class motion_planner(Node):
             print(len(self.trajectory))
             print(self.trajectory)
             while i< len(self.trajectory):
-                #publish the reference pose to the PID controller
-                self.get_logger().info(f'Publishing reference pose {i}...')
-                reference_pose_x = self.trajectory[i]
-                reference_pose_y = self.trajectory[i+1]
-                reference_pose_msg.data = [reference_pose_x, reference_pose_y, 0.0, 0.0] #set the theta to 0 as we are not using it and set PID mode to 0 by default
-                self.reference_pose_publisher.publish(reference_pose_msg) #send the first reference pose to the PID controller
+                
+                if self.reference_published == False:
+                    #publish the reference pose to the PID controller
+                    self.get_logger().info(f'Publishing reference pose {i}...')
+                    reference_pose_x = self.trajectory[i]
+                    reference_pose_y = self.trajectory[i+1]
+                    reference_pose_msg.data = [reference_pose_x, reference_pose_y, 0.0, 0.0] #set the theta to 0 as we are not using it and set PID mode to 0 by default
+                    self.reference_pose_publisher.publish(reference_pose_msg) #send the first reference pose to the PID controller
+                    self.reference_published = True
                 #wait for the bot to reach the reference point
-                while self.goal_reached_status() == False:
-                    #self.get_logger().info('Turtle is Turtling, Please be patient...')
-                    time.sleep(0.1)
-                    continue
-                self.get_logger().info('Turtle reached the reference point...')
-                i+=2
+                if self.goal_reached_status() == True:
+                    self.get_logger().info('Turtle reached the reference point...')
+                    i+=2
+                    self.reference_published = False
+                else:
+                    #self.get_logger().info('Turtle not reached the reference point...')
+                    time.sleep(0.5)
 
             self.get_logger().info('Trajectory completed...')
             #reset all flags to wait for the next target_pose        
@@ -158,7 +163,7 @@ class motion_planner(Node):
         distance_error = pid_controller.euclidean_distance_error(self.current_pose, self.target_pose)
         angle_error = pid_controller.angle_error(self.current_pose, self.target_pose)
 
-        if abs(distance_error) > self.distance_threshold and abs(angle_error) > self.angle_threshold:
+        if abs(distance_error) > self.distance_threshold:
             return False
         else:
             print('Goal reached!')

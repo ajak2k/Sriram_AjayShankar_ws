@@ -151,76 +151,33 @@ class pid_controller(Node):
             return
         if mode == 0:
             #print('############################## PID Mode 0 Operation ##################################')
-            if(self.flag == 0):
                 if abs(self.angle_error(current_pose, goal_pose)) > self.angle_threshold :
                     print('Solving the Angle Problem')
                     cmd_vel.angular.z = self.P_angular(current_pose, goal_pose, mode) + self.I_angular(current_pose, goal_pose, mode) + self.D_angular(current_pose, goal_pose, mode)
                     cmd_vel.linear.x = 0.0
-                    print("current angle: ", current_pose.theta, " goal angle: ",goal_pose.theta," angle error: ",self.angle_error(current_pose, goal_pose))
+                    #print("current angle: ", current_pose.theta, " goal angle: ",goal_pose.theta," angle error: ",self.angle_error(current_pose, goal_pose))
                 else:
                     #angle goal acheived, reset the error memory and check for the linear goal
                     self.angular_previous_error = 0.0
                     self.angular_error_accumulator = 0.0
-                    print("current x: ", current_pose.x , " goal x: ",goal_pose.x)
-                    print("current y: ", current_pose.y , " goal y: ",goal_pose.y)
-                    print('distance error: ', self.euclidean_distance_error(current_pose, goal_pose))
-                    
                     if self.euclidean_distance_error(current_pose, goal_pose) > self.distance_threshold:
                         print('Solving the Linear Problem')
                         cmd_vel.angular.z = 0.0
                         cmd_vel.linear.x = self.P_linear(current_pose, goal_pose, mode) + self.I_linear(current_pose, goal_pose, mode) + self.D_linear(current_pose, goal_pose, mode)
-                        print("current x: ", current_pose.x , " goal x: ",goal_pose.x)
-                        print("current y: ", current_pose.y , " goal y: ",goal_pose.y)
-                        print('distance error: ', self.euclidean_distance_error(current_pose, goal_pose))
+                        #print("current x: ", current_pose.x , " goal x: ",goal_pose.x)
+                        #print("current y: ", current_pose.y , " goal y: ",goal_pose.y)
+                        #print('distance error: ', self.euclidean_distance_error(current_pose, goal_pose))
                     else:
                         #linear goal acheived, reset the error memory and check for the orientation goal
                         self.linear_previous_error = 0.0
                         self.linear_error_accumulator = 0.0
-                        self.flag = 1
-            if self.flag == 1:        
-                    print('Goal locaiton reached; Correcting angle to the desired input now')
-                    if abs(self.orientation_error(current_pose, goal_pose)) >self.orientation_threshold:
-                        print('solving the Orientation Problem')
-                        cmd_vel.angular.z = self.P_orientaiton(current_pose, goal_pose) + self.I_orientation(current_pose, goal_pose) + self.D_orientation(current_pose, goal_pose)
-                        cmd_vel.linear.x = 0.0
-                    else:
-                        #orientation goal acheived, rest the error memory and wait for new goal 
-                        self.orientation_error_accumulator = 0
-                        self.orientation_previous_error = 0
                         print('Goal Acheived! Waiting for motion planner instructions')
                         cmd_vel.angular.z = 0.0
                         cmd_vel.linear.x = 0.0
                         #reset pid mode to wait for new goal from motion planner
                         self.pid_mode = -1   
                         self.flag = 0  
-        elif mode == 1:
-            #print('############################## PID Mode 1 Operation ##################################')
-            if self.flag == 0:
-                if abs(self.angle_error(current_pose, goal_pose)) > self.angle_threshold or self.euclidean_distance_error(current_pose, goal_pose) > self.distance_threshold:
-                    print('solving the Angular and Linear Problems')
-                    cmd_vel.angular.z = self.P_angular(current_pose, goal_pose, mode) + self.I_angular(current_pose, goal_pose, mode) + self.D_angular(current_pose, goal_pose, mode)
-                    cmd_vel.linear.x = self.P_linear(current_pose, goal_pose, mode) + self.I_linear(current_pose, goal_pose, mode) + self.D_linear(current_pose, goal_pose, mode) 
-                else:
-                    #reset error histories
-                    self.linear_previous_error = 0.0
-                    self.angular_previous_error = 0.0
-                    self.angular_error_accumulator = 0.0
-                    self.linear_error_accumulator = 0.0 
-                    self.flag = 1
-            if self.flag == 1:    
-                print('Goal location reached; Correcting orientaion to the desired input now')
-                if abs(self.orientation_error(current_pose, goal_pose)) >self.angle_threshold:
-                    print('solving the Orientation Problem')
-                    cmd_vel.angular.z = self.P_orientaiton(current_pose, goal_pose) + self.I_orientation(current_pose, goal_pose) + self.D_orientation(current_pose, goal_pose)
-                    cmd_vel.linear.x = 0.0
-                else:
-                    print('Goal Reached!, waiting for new goal')
-                    cmd_vel.angular.z = 0.0
-                    cmd_vel.linear.x = 0.0  
-                    self.orientation_error_accumulator = 0
-                    self.orientation_previous_error = 0
-                    self.flag ==0
-                    self.pid_mode = -1
+       
         else:
             print('No Valid Operation Mode, will wait for input')    
             cmd_vel.angular.z = 0.0
@@ -250,19 +207,6 @@ class pid_controller(Node):
         if mode == 1:
             action = self.Kd_gain_angular_1 * (self.angle_error(current_pose, goal_pose) - self.angular_previous_error)    
         self.angular_previous_error = self.angle_error(current_pose, goal_pose)
-        return action
-    
-    ######################################## Orientaiton Controller ##########################################
-    def P_orientaiton(self, current_pose, goal_pose):
-        action = self.Kp_gain_angular * self.orientation_error(current_pose, goal_pose)
-        return action
-    def I_orientation(self, current_pose, goal_pose):
-        self.orientation_error_accumulator += self.orientation_error(current_pose, goal_pose)
-        action = self.Ki_gain_angular * self.orientation_error_accumulator
-        return action
-    def D_orientation(self, current_pose, goal_pose):    
-        action = self.Kd_gain_angular * (self.orientation_error(current_pose, goal_pose) - self.orientation_previous_error)
-        self.orientation_previous_error = self.orientation_error(current_pose, goal_pose)
         return action
     
     ######################################## Linear Controller ###############################################

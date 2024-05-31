@@ -18,5 +18,6 @@ turtlebot/motion_planner.py
 turtlebot/motion_planner_pid.py
 turtlebot/motion_planner_rrt.py
 turtlebot/pid_controller.py
+turtlebot/pid_controller_wOrientation.py
 turtlebot/rrt.py
 turtlebot/rrt_node.py
